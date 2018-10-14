@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Totoloto</h1>
+    <h3>{{ 'Bet with '~ size ~' numbers' }}</h3>
+<ul>
+    {% for number in bet %}
+        <li>{{ number }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
