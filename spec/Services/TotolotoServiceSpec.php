@@ -2,6 +2,8 @@
 
 namespace spec\App\Services;
 
+use App\Domain\Bet;
+use App\Services\LotteryService;
 use App\Services\TotolotoService;
 use PhpSpec\Exception\Example\FailureException;
 use PhpSpec\ObjectBehavior;
@@ -12,6 +14,11 @@ class TotolotoServiceSpec extends ObjectBehavior
     function it_is_initializable()
     {
         $this->shouldHaveType(TotolotoService::class);
+    }
+
+    function it_a_lottery_service()
+    {
+        $this->shouldHaveType(LotteryService::class);
     }
 
     function it_can_select_a_number()
@@ -44,7 +51,7 @@ class TotolotoServiceSpec extends ObjectBehavior
 
     function it_cannot_return_repeated_numbers()
     {
-        $numbers = $this->numbers(20);
+        $numbers = $this->numbers(11);
         $list = [];
         foreach ($numbers->getWrappedObject() as $number) {
             if (in_array($number, $list)) {
@@ -68,5 +75,19 @@ class TotolotoServiceSpec extends ObjectBehavior
             }
             $lastNumber = $number;
         }
+    }
+
+    function it_throws_an_exception_for_best_over_11_numbers()
+    {
+        $this->shouldThrow(\InvalidArgumentException::class)
+            -> during('numbers', [16]);
+    }
+
+    function it_can_generate_a_bet()
+    {
+        $bet = $this->bet();
+        $bet->shouldBeAnInstanceOf(Bet::class);
+        $bet->numbers()->shouldHaveCount(6);
+        $bet->stars()->shouldHaveCount(0);
     }
 }

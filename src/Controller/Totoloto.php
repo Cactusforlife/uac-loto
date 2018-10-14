@@ -33,15 +33,15 @@ class Totoloto extends AbstractController
     }
 
     /**
-     * @Route("/totoloto/{bet}")
+     * @Route("/totoloto/{size}")
      */
-    public function numbers(int $bet = 6): Response
+    public function bet(int $size = 6): Response
     {
-        $numbers = $this->service->numbers($bet);
+        $bet = $this->service->bet($size);
 
         return $this->render(
             'totoloto/numbers.html.twig',
-             compact('numbers', 'bet')
+             compact('bet', 'size')
         );
     }
 }

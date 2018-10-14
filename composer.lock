@@ -2375,16 +2375,16 @@
         },
         {
             "name": "phpspec/phpspec",
-            "version": "5.0.2",
+            "version": "5.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/phpspec.git",
-                "reference": "eeb9503bdd0bca26d7d7dcfb87742a9675d3bbcd"
+                "reference": "6c0351a46582be027f3e504c93789427cdd4bcda"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/phpspec/zipball/eeb9503bdd0bca26d7d7dcfb87742a9675d3bbcd",
-                "reference": "eeb9503bdd0bca26d7d7dcfb87742a9675d3bbcd",
+                "url": "https://api.github.com/repos/phpspec/phpspec/zipball/6c0351a46582be027f3e504c93789427cdd4bcda",
+                "reference": "6c0351a46582be027f3e504c93789427cdd4bcda",
                 "shasum": ""
             },
             "require": {
@@ -2452,7 +2452,7 @@
                 "testing",
                 "tests"
             ],
-            "time": "2018-09-24T07:40:08+00:00"
+            "time": "2018-10-01T07:32:39+00:00"
         },
         {
             "name": "phpspec/prophecy",
